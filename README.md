@@ -1,2 +1,0 @@
-AUTH_GOOGLE_ID = 282754872359-uo9mg8kf1f3qo6l8b1ge406o8njfuvqu.apps.googleusercontent.com
-AUTH_GOOGLE_SECRET = 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
