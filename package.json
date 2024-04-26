@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "studio": "npx drizzle-kit studio",
+    "db:generate": "npx drizzle-kit generate:pg",
+    "db:push": "npx drizzle-kit push:pg",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

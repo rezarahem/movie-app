@@ -15,6 +15,13 @@
       "when": 1714084491394,
       "tag": "0001_curious_bruce_banner",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714122534707,
+      "tag": "0002_volatile_jack_power",
+      "breakpoints": true
     }
   ]
 }

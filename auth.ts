@@ -2,7 +2,7 @@ import { drizzleDb } from '@/drizzle/drizzle-db';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import NextAuth from 'next-auth';
 import authConfig from '@/auth.config';
-import { users } from './drizzle/schema';
+import { users, userRole } from '@/drizzle/schema';
 import { eq } from 'drizzle-orm';
 
 export const { handlers, auth } = NextAuth({
@@ -19,7 +19,7 @@ export const { handlers, auth } = NextAuth({
 
       if (!existingUser) return token;
 
-      token.role = 'user[fake]';
+      token.role = existingUser.role;
 
       return token;
     },
@@ -29,7 +29,7 @@ export const { handlers, auth } = NextAuth({
       }
 
       if (token.role && session.user) {
-        session.user.role = token.role as 'ADMIN' | 'USER';
+        session.user.role = token.role as typeof userRole;
       }
 
       return session;
@@ -39,6 +39,7 @@ export const { handlers, auth } = NextAuth({
     strategy: 'jwt',
   },
   // pages: {
-  //   signIn: 'login',
+  //   signIn: '/auth/login',
+  //   error: '/auth/error',
   // },
 });
