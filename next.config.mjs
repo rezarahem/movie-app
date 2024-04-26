@@ -7,7 +7,8 @@ const nextConfig = {
                 hostname: 'movie-app.storage.iran.liara.space'
             }
         ]
-    }
+    },
+    output: 'standalone'
 };
 
 export default nextConfig;

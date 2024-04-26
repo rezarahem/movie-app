@@ -6,12 +6,13 @@ const migrationClient = postgres(process.env.DATABASE_URL as string, {
   max: 1,
 });
 
-const main = async () => {
+export const main = async () => {
   await migrate(drizzle(migrationClient), {
     migrationsFolder: './migrations',
   });
 
   await migrationClient.end();
+  console.log('m done');
 };
 
-main();
+// main();
