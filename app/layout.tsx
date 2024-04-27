@@ -1,8 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
+import { cn } from '@/libs/utils';
+import localFont from 'next/font/local';
+import Navbar from '@/components/navbar/navbar';
 
-const inter = Inter({ subsets: ['latin'] });
+const mainFont = localFont({
+  src: '../fonts/IRANSansXV.woff2',
+  variable: '--font-iransansxv',
+  display: 'block',
+});
 
 export const metadata: Metadata = {
   title: 'Movie App',
@@ -15,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html dir='rtl' lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html dir='rtl' lang='fa-Ir'>
+      <body className={cn('font-sansX', mainFont.variable)}>{children}</body>
     </html>
   );
 }

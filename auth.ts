@@ -38,8 +38,8 @@ export const { handlers, auth } = NextAuth({
   session: {
     strategy: 'jwt',
   },
-  // pages: {
-  //   signIn: '/auth/login',
-  //   error: '/auth/error',
-  // },
+  pages: {
+    signIn: '/auth/login',
+    // error: '/auth/error',
+  },
 });
