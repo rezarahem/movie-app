@@ -1,16 +1,24 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        movies: '#f5c518',
+        darkest: '#222831',
+        dark: '#31363F',
+        lightCyen: '#76ABAE',
+        lightGray: '#EEEEEE',
+      },
       fontFamily: {
         sansX: ['var(--font-iransansxv)'],
+        jersey: ['var(--font-jersey)'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

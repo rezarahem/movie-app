@@ -2,12 +2,20 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/libs/utils';
 import localFont from 'next/font/local';
-import Navbar from '@/components/navbar/navbar';
+import { ThemeProvider } from '@/providers/theme-provider';
+import { Jersey_15 } from 'next/font/google';
 
 const mainFont = localFont({
   src: '../fonts/IRANSansXV.woff2',
   variable: '--font-iransansxv',
   display: 'block',
+});
+
+const jersey = Jersey_15({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'block',
+  variable: '--font-jersey',
 });
 
 export const metadata: Metadata = {
@@ -22,7 +30,17 @@ export default function RootLayout({
 }>) {
   return (
     <html dir='rtl' lang='fa-Ir'>
-      <body className={cn('font-sansX', mainFont.variable)}>{children}</body>
+      <body
+        className={cn(
+          'dark:bg-darkest font-sansX',
+          mainFont.variable,
+          jersey.variable,
+        )}
+      >
+        <ThemeProvider attribute='class' disableTransitionOnChange enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

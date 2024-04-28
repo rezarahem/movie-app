@@ -5,6 +5,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'movie-app.storage.iran.liara.space'
+            },
+            {
+                protocol: 'https',
+                hostname: 'lh3.googleusercontent.com'
             }
         ]
     },

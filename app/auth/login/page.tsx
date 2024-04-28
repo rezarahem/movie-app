@@ -3,7 +3,13 @@ import LoginButton from '@/components/auth/login-button';
 import bgImgae from '@/public/hour-of-the-wolf.jpg';
 import Image from 'next/image';
 
-const LoginPage = async () => {
+const LoginPage = async ({
+  searchParams,
+}: {
+  searchParams: {
+    callbackUrl: string;
+  };
+}) => {
   return (
     <div className='relative flex h-full flex-col lg:grid lg:grid-cols-10'>
       <div className='fixed inset-0 z-20 mx-auto flex flex-col items-center justify-center px-6 py-3 sm:max-w-lg lg:static lg:col-span-3 lg:w-full'>
@@ -11,7 +17,7 @@ const LoginPage = async () => {
           <h2 className='text-2xl font-extrabold sm:text-3xl lg:text-4xl '>
             خوش آمدید
           </h2>
-          <LoginButton />
+          <LoginButton callbackUrlPath={searchParams.callbackUrl} />
         </div>
         {/* <div className='hidden lg:mt-auto lg:block'>movie app</div> */}
       </div>
@@ -22,9 +28,6 @@ const LoginPage = async () => {
             Hour of the Wolf
           </div>
         </div>
-        {/* <div className='fixed inset-x-0 bottom-3 z-10 mx-auto flex justify-center rounded-full  text-center text-xslg:left-3'>
-          
-        </div> */}
         <div className='relative h-full '>
           <Image
             src={bgImgae}

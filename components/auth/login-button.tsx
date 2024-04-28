@@ -4,11 +4,17 @@ import GoogleIcon from '@/public/google-icon.png';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 
-const LoginButton = () => (
+type LoginButtonProps = {
+  callbackUrlPath?: string;
+};
+
+const LoginButton = ({ callbackUrlPath }: LoginButtonProps) => (
   <button
     onClick={(e) => {
       e.preventDefault();
-      signIn('google');
+      signIn('google', {
+        callbackUrl: callbackUrlPath ? callbackUrlPath : '/',
+      });
     }}
     className='flex w-full items-center justify-between gap-x-3 rounded-full border px-3 py-3 hover:bg-gray-100'
   >

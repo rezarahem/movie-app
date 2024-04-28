@@ -13,7 +13,7 @@ const Container = ({
 }: ContainerProps) => {
   return (
     <div
-      className={cn('mx-auto flex max-w-6xl px-5 md:px-3', className, {
+      className={cn('mx-auto flex max-w-7xl px-5 md:px-3', className, {
         'h-full': isFullHeight,
       })}
     >
