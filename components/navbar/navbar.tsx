@@ -8,14 +8,14 @@ const Navbar = () => {
   return (
     <nav className='h-14 border-b bg-[#121212] py-1 dark:border-gray-700 dark:bg-[#121212]'>
       <Container isFullHeight className='items-center gap-x-2'>
-        <div className='flex items-center gap-x-2'>
-          <Logo iconSize='size-7' fontSize='text-4xl' />
+        <div className='flex items-center gap-x-2 sm:flex-row-reverse'>
           <Menu />
+          <Logo iconSize='siz-6 sm:size-7' fontSize='text-3xl sm:text-4xl' />
         </div>
-        <div className='w-full'>
+        <div className='mr-auto sm:mr-0 sm:w-full'>
           <SearchInput />
         </div>
-        <div className='mr-auto'>
+        <div className=''>
           <User />
         </div>
       </Container>
